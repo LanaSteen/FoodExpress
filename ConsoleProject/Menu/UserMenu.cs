@@ -1,6 +1,8 @@
 ﻿using ConsoleProject.Exceptions;
 using ConsoleProject.Models;
 using ConsoleProject.Services;
+using Microsoft.Extensions.Configuration;
+using Spectre.Console;
 
 namespace ConsoleProject.Menu
 {
@@ -9,12 +11,15 @@ namespace ConsoleProject.Menu
 		private readonly UserService _userService;
 		private readonly ClientMenu _clientMenu;
 		private readonly AdminMenu _adminMenu;
+		private readonly IConfiguration _configuration;
 
-		public UserMenu(UserService userService, ClientMenu clientMenu, AdminMenu adminMenu)
+		
+		public UserMenu(IConfiguration configuration, UserService userService, ClientMenu clientMenu, AdminMenu adminMenu)
 		{
 			_userService = userService;
 			_clientMenu = clientMenu;
 			_adminMenu = adminMenu;
+			_configuration = configuration;
 		}
 
 		public void ShowMainMenu()
@@ -53,6 +58,35 @@ namespace ConsoleProject.Menu
 			user.Email = Console.ReadLine() ?? "";
 			Console.Write("Password: ");
 			user.Password = Console.ReadLine() ?? "";
+
+			
+
+			user.IsAdmin =  AnsiConsole.Confirm("Admin?");
+
+			if (user.IsAdmin)
+			{
+				AnsiConsole.MarkupLine("[green]enter secret word![/]");
+
+
+				var password = new TextPrompt<string>("Enter your [green]secret[/]:")
+	.Secret();
+
+				var secretword = AnsiConsole.Prompt(password);
+
+				if (_configuration["SecretWordadmin"] == secretword)
+				{
+					user.IsAdmin = true;
+				}
+				else{
+					user.IsAdmin = false;
+				}
+			    
+			}
+			else
+			{
+				user.IsAdmin = false;
+			}
+
 
 			_userService.RegisterUser(user);
 			Console.WriteLine("Registration completed.");

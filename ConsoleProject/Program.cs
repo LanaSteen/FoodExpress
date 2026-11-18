@@ -25,7 +25,7 @@ namespace ConsoleProject
 
 			var clientMenu = new ClientMenu(foodService, orderService);
 			var adminMenu = new AdminMenu(foodService, orderService);
-			var userMenu = new UserMenu(userService, clientMenu, adminMenu);
+			var userMenu = new UserMenu(configuration, userService, clientMenu, adminMenu);
 
 			userMenu.ShowMainMenu();
 		}

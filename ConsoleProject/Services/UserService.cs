@@ -36,7 +36,7 @@ namespace ConsoleProject.Services
 			user.VerificationCode = Random.Shared.Next(1000, 10000).ToString();
 			user.IsVerified = false;
 			user.IsLogged = false;
-			user.IsAdmin = false;
+			user.IsAdmin = user.IsAdmin;
 
 			_userRepository.SaveUser(user);
 
