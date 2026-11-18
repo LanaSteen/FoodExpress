@@ -9,6 +9,9 @@ namespace ConsoleProject
 	{
 		private static void Main(string[] args)
 		{
+
+
+			/// test addd
 			var configuration = new ConfigurationBuilder()
 				.SetBasePath(AppContext.BaseDirectory)
 			.AddJsonFile("appsettings.json", optional: false, reloadOnChange: false)
