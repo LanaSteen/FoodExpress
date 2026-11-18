@@ -1,0 +1,5 @@
+1|dd|sojajo3451@fulldiets.com|$2a$11$7gmElL/yWuqR7H/S/n5LQOhqgVirJOFZHgsMiRvvEDI7VXiJRA2lm|False|9681|True|False
+2|ff|vejir17691@chuwel.com|$2a$11$aY/HfHMaKYWFJ3nwevH8aOc69dWor9w75FO9G4QnTthltcmk6d2Qe|False|9425|False|False
+3|nika|nikolozikara@gmail.com|$2a$11$t5f923NCNdtAu659QHdBVu72wvZr/1jGEnXW1lMd2/2zotat0nZGG|False|2105|False|False
+4|ff|miraja2421@fulldiets.com|$2a$11$mQ5Wq7WKvaH3xHfL.XAgeO4xPc9as2vLDEigVDKkaxPR4SVkzfEj.|False|8782|True|True
+5|dd|xifagor561@bcough.com|$2a$11$GSRJsPW9EwHrz4aT2iYkvuRW604OAas11yaHtLP.q.Zvl9oCRmW9W|True|1127|True|False
